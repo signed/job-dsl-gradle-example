@@ -19,7 +19,7 @@ job("$basePath/grails-example-build") {
         githubPullRequest {
             admin 'sheehan'
             triggerPhrase 'OK to test'
-            onlyTriggerPhrase true
+            onlyTriggerPhrase
         }
     }
     steps {
