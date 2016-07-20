@@ -22,10 +22,5 @@ folder(basePath) {
         steps {
             grails 'test war'
         }
-        publishers {
-            if (config.email) {
-                extendedEmail config.email
-            }
-        }
     }
 }
