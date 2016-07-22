@@ -18,6 +18,7 @@ repositories {
 
 configurations {
     testPlugins {}
+    libs
 }
 
 dependencies {
@@ -49,6 +50,7 @@ dependencies {
 
     // for the RestApiScriptRunner and XmlOutputRunner
     compile('org.apache.ant:ant:1.9.7')
+    libs('org.yaml:snakeyaml:1.17')
 }
 
 task resolveTestPlugins(type: Copy) {
@@ -81,6 +83,11 @@ task debugXml(dependsOn: 'classes', type: JavaExec) {
     main = 'com.dslexample.debug.XmlOutputRunner'
     classpath = sourceSets.main.runtimeClasspath
     systemProperties System.getProperties()
+}
+
+task libs(type: Copy) {
+    into 'libs'
+    from configurations.libs
 }
 
 task wrapper(type: Wrapper) {
