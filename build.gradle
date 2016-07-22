@@ -50,6 +50,7 @@ dependencies {
 
     // for the RestApiScriptRunner and XmlOutputRunner
     compile('org.apache.ant:ant:1.9.7')
+    compile('org.yaml:snakeyaml:1.17')
     libs('org.yaml:snakeyaml:1.17')
 }
 
